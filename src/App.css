@@ -5,8 +5,6 @@ body, html {
   background-color: rgb(247, 247, 247);
 }
 
-
-/* App.css */
 .footer {
   background-color: #343a40;
   color: #ffffff;
@@ -53,7 +51,7 @@ h1{
 
 input[type="text"] {
   padding: 10px;
-  width: 60%; /* Reduced width */
+  width: 60%; 
   margin-right: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -141,7 +139,7 @@ main {
 
 .content {
   flex: 1;
-  margin: 0 190px; /* Adjust margin to make space for ads */
+  margin: 0 190px; 
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -185,7 +183,7 @@ main {
 
 .search-bar input {
   padding: 10px;
-  width: 90%; /* Reduced width */
+  width: 90%;  /* Reduced width */
   margin-right: 10px;
   margin-left: 200px;
   border: 1px solid #ccc;
@@ -367,7 +365,7 @@ main {
   font-size: 16px;
 }
 
-/* Modal Styles */
+
 .modal {
   position: absolute;
   top: 50%;
@@ -393,7 +391,7 @@ main {
   background-color: rgba(0, 0, 0, 0.75);
 }
 
-/* AuthPage Styles */
+
 .auth-container {
   position: relative;
   padding: 20px;
@@ -466,7 +464,7 @@ main {
 
 
 
-/* NewsItem Styles */
+
 .news-item {
   border: 1px solid #ddd;
   padding: 16px;
@@ -489,7 +487,7 @@ main {
   color: #555;
 }
 
-/* Load More Button Styles */
+
 .load-more-button {
   display: block;
   margin: 20px auto;
@@ -559,7 +557,7 @@ main {
   margin: 10px 0;
 }
 
-/* Load More Button Styles */
+
 .load-more-button {
   display: block;
   margin: 20px auto;
@@ -597,7 +595,7 @@ main {
 .suggestions-list li:hover {
   background-color: #f0f0f0;
 }
-/* App.css */
+
 .search-bar-container {
   display: flex;
   width:950px;

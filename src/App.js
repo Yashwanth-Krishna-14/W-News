@@ -19,7 +19,7 @@ function App() {
     <Router>
       <div className="App">
         <Header />
-        {/* <SearchBar onSearch={handleSearch} /> */}
+      
         <main>
           <Routes>
             <Route path="/" element={<LandingPage searchQuery={searchQuery} />} />

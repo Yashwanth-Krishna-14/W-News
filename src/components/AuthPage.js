@@ -9,10 +9,10 @@ const AuthPage = ({ isLogin, onClose }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isLoginMode) {
-      // Handle login logic
+                                                              // Handle login logic
       console.log('Logging in with:', { email, password });
     } else {
-      // Handle signup logic
+                                                               // Handle signup logic
       console.log('Signing up with:', { name, email, password });
     }
     onClose();

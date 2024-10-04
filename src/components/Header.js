@@ -20,7 +20,7 @@ const Header = () => {
 
   const handleHomeClick = () => {
     navigate('/');
-    window.location.reload(); // Refresh the content
+    window.location.reload();                // Refresh the content
   };
 
   return (

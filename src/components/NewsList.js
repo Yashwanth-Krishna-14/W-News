@@ -12,7 +12,7 @@ const NewsList = ({ searchQuery }) => {
     const fetchNews = async () => {
       setLoading(true);
       try {
-        const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&page=${page}&pageSize=10&apiKey=f9fda6ddd55c4660bc0d978ab8b56e5b`);
+        const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&page=${page}&pageSize=10&apiKey=3ab8d6afb6dd41a78ea823ef93ab173b`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
