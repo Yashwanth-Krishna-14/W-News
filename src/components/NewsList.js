@@ -6,31 +6,38 @@ const NewsList = ({ searchQuery }) => {
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
-    fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=f9fda6ddd55c4660bc0d978ab8b56e5b')
-      .then(response => {
+    const fetchNews = async () => {
+      setLoading(true);
+      try {
+        const response = await fetch(`https://newsapi.org/v2/top-headlines?country=us&page=${page}&pageSize=10&apiKey=f9fda6ddd55c4660bc0d978ab8b56e5b`);
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
-        return response.json();
-      })
-      .then(data => {
-        setNews(data.articles);
+        const data = await response.json();
+        setNews(prevNews => [...prevNews, ...data.articles]);
         setLoading(false);
-      })
-      .catch(error => {
+      } catch (error) {
         setError(error);
         setLoading(false);
-      });
-  }, []);
+      }
+    };
+
+    fetchNews();
+  }, [page]);
 
   const filteredNews = news.filter(article =>
     article.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
     article.description?.toLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  if (loading) {
+  const loadMore = () => {
+    setPage(prevPage => prevPage + 1);
+  };
+
+  if (loading && page === 1) {
     return <p>Loading news...</p>;
   }
 
@@ -43,6 +50,12 @@ const NewsList = ({ searchQuery }) => {
       {filteredNews.map((article, index) => (
         <NewsItem key={index} article={article} />
       ))}
+      {loading && <p>Loading more news...</p>}
+      {!loading && (
+        <button onClick={loadMore} className="load-more-button">
+          Load More
+        </button>
+      )}
     </div>
   );
 };
